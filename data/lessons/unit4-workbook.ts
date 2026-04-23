@@ -23,6 +23,8 @@ export interface Exercise {
   columnsB?: string[];
   wordBank?: string[];
   note?: string;
+  // answers[i] corresponds to item i (or blank ¹=0, ²=1… in reading passages)
+  answers?: string[];
 }
 
 export interface Section {
@@ -82,6 +84,7 @@ const unit4: Lesson = {
             "f. herself.",
             "g. itself.",
           ],
+          answers: ["f. herself", "d. themselves", "b. himself", "e. ourselves", "c. myself", "a. yourself", "g. itself"],
         },
         {
           id: "g1-a1",
@@ -93,6 +96,7 @@ const unit4: Lesson = {
           hebrewInstruction:
             "סמנו את הפעלים ב-Past Simple. לאחר מכן עקבו אחריהם לעבר המטוס.",
           note: "Look at the word maze in your workbook (p. 108). The circled verb is: stopped",
+          answers: ["remained", "worried", "planned", "expected", "disappeared", "worked", "carried", "preferred", "repeated"],
           items: [
             "walk", "remained", "work", "wonder", "decide",
             "cry", "worried", "realize", "survive",
@@ -118,6 +122,7 @@ const unit4: Lesson = {
             "We sleep / slept / are sleeping at our grandparents' house last weekend.",
             "Last night, my brother ate / eats / is eating the whole pizza by himself.",
           ],
+          answers: ["spent", "went", "flew", "began", "slept", "ate"],
         },
         {
           id: "g1-c2",
@@ -141,6 +146,7 @@ const unit4: Lesson = {
             "sit → ?",
           ],
           note: "Use the List of Irregular Verbs on page 207 in the Student's Book to help you.",
+          answers: ["went", "ate", "wrote", "drove", "became", "flew", "took", "dreamt", "lost", "sat"],
         },
         {
           id: "g1-c2b",
@@ -159,6 +165,7 @@ const unit4: Lesson = {
             "Shani and Meirav ______ (go) to Eilat on vacation.",
             "The pilot ______ (fly) to New York yesterday.",
           ],
+          answers: ["became", "ate", "lost", "dreamt", "wrote", "sat", "went", "flew"],
         },
         {
           id: "g1-d",
@@ -178,6 +185,7 @@ const unit4: Lesson = {
             "We ______ in line for two hours to buy tickets.",
             "In 1972, Mark Spitz ______ seven Olympic medals in swimming.",
           ],
+          answers: ["put", "beat", "fell", "shook", "spent", "slept", "stood", "won"],
         },
         {
           id: "g1-e1",
@@ -194,6 +202,7 @@ Nobody ⁵______ (know) where the lighthouse keepers were. When people on the is
 
 Until today, no one knows what happened.`,
           note: "lighthouse keepers = שומרי מגדלור | aliens = יצורים חייזריים | drowned = טבעו",
+          answers: ["sailed", "waited", "arrived", "came", "knew", "went", "said", "took", "left", "believed"],
         },
         {
           id: "g1-e2",
@@ -257,6 +266,7 @@ Until today, no one knows what happened.`,
             "You can have a clever / available idea.",
             "When you want to see something better, you look at it in case / closely.",
           ],
+          answers: ["drawer", "carpet", "brain", "fine", "clever", "closely"],
         },
         {
           id: "w1-b",
@@ -288,6 +298,7 @@ Until today, no one knows what happened.`,
             "David is so tall he can touch the … with his fingers. → a. carpet  b. drawer  c. ceiling",
             "The teacher … that something was wrong when she came into the room. → a. examined  b. explored  c. noticed",
           ],
+          answers: ["b. in case", "a. examined", "b. immediately", "c. among", "a. available", "c. ceiling", "c. noticed"],
         },
         {
           id: "w1-d",
@@ -305,6 +316,7 @@ Until today, no one knows what happened.`,
             "When Jason travels, he loves to ______ new places.",
             "We saw strange ______ in the sky.",
           ],
+          answers: ["closely", "brain", "piece", "fine", "everywhere", "explore", "objects"],
         },
         {
           id: "w2-a",
@@ -353,6 +365,7 @@ Until today, no one knows what happened.`,
             "Aviad performed / didn't perform on stage last week.",
             "Meital received / didn't receive a gift for her birthday.",
           ],
+          answers: ["didn't snow", "didn't go", "had", "performed", "didn't receive"],
         },
         {
           id: "g2-b",
@@ -371,6 +384,7 @@ Until today, no one knows what happened.`,
             "The students were happy that they ______ (manage) to finish their science report.",
             "Ella ______ (notice) that she forgot her homework. She went to school without it.",
           ],
+          answers: ["didn't break", "won", "didn't explore", "didn't buy", "managed", "didn't notice"],
         },
         {
           id: "g2-c",
@@ -382,6 +396,7 @@ Until today, no one knows what happened.`,
           content: `**A Great Vacation**
 
 My family and I ¹______ (have) a great time on our summer vacation. It ²______ (not rain) the whole week. Mom ³______ (want) to take a tour of the old city, but my sister ⁴______ (not want) to come. Rina ⁵______ (take) lots of pictures at the beach. She ⁶______ (not go) anywhere else. We ⁷______ (not swim) in the Red Sea because it was too cold. We ⁸______ (go) to the underwater aquarium instead. All of us ⁹______ (have) such a good time. We ¹⁰______ (not want) to go home.`,
+          answers: ["had", "didn't rain", "wanted", "didn't want", "took", "didn't go", "didn't swim", "went", "had", "didn't want"],
         },
         {
           id: "g2-d",
@@ -393,7 +408,8 @@ My family and I ¹______ (have) a great time on our summer vacation. It ²______
           wordBank: ["want", "tell", "come", "change", "believe", "wonder"],
           content: `**Harry Houdini**
 
-Harry Houdini always ¹______ (want) to be a magician. He ²______ (change) his name, Eric, was a good stage name, so he ³______ (tell) his name to Harry Houdini. One of Harry's most famous tricks was getting out of handcuffs. At one event, he ⁴______ (come) 4,000 people and 100 newspaper writers to watch how he did this. After the event, he ⁵______ (believe) them that this was one of the most difficult escapes of his life. People all over the world ⁶______ (wonder) how he was always able to escape. Today, people still call Houdini's escapes the greatest in history.`,
+Harry Houdini always ¹______ (want) to be a magician. He ²______ (believe) his name, Eric, was a good stage name, so he ³______ (change) his name to Harry Houdini. One of Harry's most famous tricks was getting out of handcuffs. At one event, ⁴______ (come) 4,000 people and 100 newspaper writers to watch how he did this. After the event, he ⁵______ (tell) them that this was one of the most difficult escapes of his life. People all over the world ⁶______ (wonder) how he was always able to escape. Today, people still call Houdini's escapes the greatest in history.`,
+          answers: ["wanted", "didn't believe", "changed", "came", "told", "wondered"],
         },
         {
           id: "g2-e",
@@ -439,6 +455,7 @@ Harry Houdini always ¹______ (want) to be a magician. He ²______ (change) his 
             "f. סצנה / מקום",
             "g. להתרחק / להישאר הרחק",
           ],
+          answers: ["a", "b", "c", "d", "e", "f", "g"],
         },
         {
           id: "ls-nw2",
@@ -469,6 +486,7 @@ Harry Houdini always ¹______ (want) to be a magician. He ²______ (change) his 
             "Life was difficult because there wasn't enough … → a. land  b. food  c. weather",
             "They chose John White to be their … → a. doctor  b. teacher  c. leader",
           ],
+          answers: ["a. 1584", "b. 300", "b. food", "c. leader"],
         },
         {
           id: "ls-a",
@@ -510,6 +528,7 @@ Harry Houdini always ¹______ (want) to be a magician. He ²______ (change) his 
             "d. fast, right away",
             "e. the opposite of to come back",
           ],
+          answers: ["d. fast, right away", "a. the opposite of to follow", "e. the opposite of to come back", "b. something you say that you will do", "c. lots of wind, rain or snow"],
         },
         {
           id: "ls-c",
@@ -525,6 +544,7 @@ Harry Houdini always ¹______ (want) to be a magician. He ²______ (change) his 
             "The police asked us for our scene / explanation of the accident.",
             "You should stay away / own from other people if you feel sick.",
           ],
+          answers: ["population", "belief", "storm", "leader", "explanation", "stay away"],
         },
         {
           id: "ls-d",
@@ -539,6 +559,7 @@ Harry Houdini always ¹______ (want) to be a magician. He ²______ (change) his 
             "China's … is larger than Japan's. → a. period  b. belief  c. population",
             "Eden … his lunch with Adam almost every day. → a. shares  b. owns  c. leads",
           ],
+          answers: ["a. led", "c. storms", "c. promised", "c. population", "a. shares"],
         },
         {
           id: "ls-e1",
@@ -555,6 +576,7 @@ Yesterday I saw a really good science fiction movie and I thought about you. You
 It is about a group of kids at summer camp. One day their camp ¹______ disappears without any ²______. The kids try to solve the mystery ³______. I don't want to tell you how the movie ends, but I ⁴______ you'll love it. It's one of the best movies I've seen this year.
 
 Moria`,
+          answers: ["leader", "explanation", "as quickly as possible", "promise"],
         },
         {
           id: "ls-e2",
@@ -591,6 +613,7 @@ Moria`,
             "Next, I made her favorite toast sandwich for her.",
             "First, I took her to bed.",
           ],
+          answers: ["4", "1", "5", "3", "2"],
         },
         {
           id: "wr-b",
@@ -602,6 +625,7 @@ Moria`,
           content: `**Tasty Toast Sandwich**
 
 ¹______, you need to buy bread from the bakery. ²______ you go to the market and buy cheese and tomatoes. ³______, you go home and prepare the sandwich. Put butter on one piece of bread, then the cheese and tomatoes. Cover with another piece of bread. ⁴______, put the sandwich in the toaster and wait until it's ready.`,
+          answers: ["First", "Then", "Next", "Finally"],
         },
         {
           id: "wr-c",
